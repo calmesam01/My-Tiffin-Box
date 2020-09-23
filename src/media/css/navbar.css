@@ -1,0 +1,26 @@
+.navbar {
+    font-weight: bold;
+    color:white;
+    background-color: #16b171;
+    border: 0px !important;
+    
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    background-color: #16b171;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #16b171;
+    background-color: white;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-inverse .navbar-nav>li>a {
+        font-size: 18px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+}
