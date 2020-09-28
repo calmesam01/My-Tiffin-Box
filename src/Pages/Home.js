@@ -1,4 +1,5 @@
 import React from 'react';
+import Main_1 from '../Components/Main_1/Main_1';
 import ButtonGroup from '../Components/ButtonGroup';
 import Tiffin from '../media/images/tiffin5.svg';
 import Roti from '../media/images/roti.svg';
@@ -22,6 +23,9 @@ function Home () {
     var data = 'some data';
     return (
         <div className = "landing-page">
+            <div>
+                <Main_1 />
+            </div>
             <div className = "row">
                 <div className = "col-md-4 col-sm-4">
                     <center>

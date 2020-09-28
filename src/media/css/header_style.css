@@ -1,0 +1,6 @@
+.header {
+	background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: calc(50% + 23rem) 100%;
+    color: #fff;
+}

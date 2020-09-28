@@ -1,0 +1,36 @@
+@media only screen and (min-width: 1440px) {
+    .navbar-inverse .navbar-nav>li>a {
+      font-size: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 10px;
+      color: white;
+      background-color: transparent;
+      margin: 8px;
+      padding: 10px;
+    }
+    .navbar {
+      font-weight: bold;
+      color:white;
+      background-color: transparent;
+      border: 0px !important;
+      padding-top: 2.8%;
+      margin-right: 5%;
+    }
+    .navbar-inverse .navbar-nav>li>a:hover {
+      color: #16b171;
+      background-color: white;
+    }
+    .logo{
+      color: #16b171;
+      margin-left: 47%;
+      font-size: 35px;
+    }
+    .landing_bg {
+      position: absolute;
+      left: 30%;
+      height: 37%;
+      width: 70%;
+      overflow-x: hidden;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Main_1 from './Main_1/Main_1';
 import Footer from './Footer'
-
+import Navbar from '../Components/Main_1/Navbar';
 import Home from '../Pages/Home';
 import Register from '../Pages/Register';
 import About from '../Pages/About';

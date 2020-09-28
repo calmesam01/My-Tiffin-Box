@@ -19,12 +19,6 @@ function OrderNow () {
         var TodaysSpecial = 0;
         var arr_2 = [Dahi, Salad, Achaar, Dessert, TodaysSpecial];
         var arr_3 = ['Dahi', 'Dahi', 'Salad', 'Dessert'];
-        
-        // for (i = 0; i < arr_2.length(); i++) {
-        //     for (j = 0; j < arr_3.length(); j++) {
-        //         if 
-        //     }
-        // }
 
         console.log(JSON.parse(myArr_1));
 
