@@ -33,5 +33,15 @@
         width: 100%;
         padding: 0%;
     }
+    .order_now_heading {
+        text-align: center;
+        color: #16b171;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: optima;
+    }
+    .main_1_hr {
+        width: 70%;
+    }
 
 }

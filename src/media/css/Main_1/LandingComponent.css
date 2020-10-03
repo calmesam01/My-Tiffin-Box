@@ -53,19 +53,21 @@
       color: #16b171;
       font-weight: bold;
     }
-    .btn_try_now {
-      color: white;
-      background-color: #16b171;
-      border: 2px solid white;
-      padding-bottom: 15px;
-    }
-    .btn_try_now:hover{
-      color: #16b171;
-      background-color: white;
-      border: 2px solid #16b171;
-    }
+    
     .try_now {
       color: #16b171;
       font-weight: bold;
     }
+  }
+
+  .btn_try_now {
+    color: white;
+    background-color: #16b171;
+    border: 2px solid white;
+    padding-bottom: 15px;
+  }
+  .btn_try_now:hover{
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
   }

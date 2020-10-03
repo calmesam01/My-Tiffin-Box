@@ -2,6 +2,7 @@ import React from 'react';
 import '../media/css/home.css'
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import '../media/css/Tiffin-Model/tiffin_model.css';
 
 
 function ButtonGroup (props) {
@@ -185,34 +186,34 @@ function ButtonGroup (props) {
         <div>
             <div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRoti} className="btn "> + </button>
-                        <button type="button" className="btn "> Roti </button>
-                        <button type="button" onClick={RemoveRoti} className="btn "> - </button>
+                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
+                        <button type="button" className="btn btn-item"> Roti </button>
+                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDahi} className="btn "> + </button>
-                        <button type="button" className="btn "> Dahi </button>
-                        <button type="button" onClick={RemoveDahi} className="btn "> - </button>
+                        <button type="button" onClick={AddDahi} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Dahi </button>
+                        <button type="button" onClick={RemoveDahi} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddSalad} className="btn "> + </button>
-                        <button type="button" className="btn "> Salad </button>
-                        <button type="button" onClick={RemoveSalad} className="btn "> - </button>
+                        <button type="button" onClick={AddSalad} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Salad </button>
+                        <button type="button" onClick={RemoveSalad} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddAchaar} className="btn "> + </button>
-                        <button type="button" className="btn "> Achaar </button>
-                        <button type="button" onClick={RemoveAchaar} className="btn "> - </button>
+                        <button type="button" onClick={AddAchaar} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Achaar </button>
+                        <button type="button" onClick={RemoveAchaar} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDessert} className="btn "> + </button>
-                        <button type="button" className="btn "> Dessert </button>
-                        <button type="button" onClick={RemoveDessert} className="btn "> - </button>
+                        <button type="button" onClick={AddDessert} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Dessert </button>
+                        <button type="button" onClick={RemoveDessert} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddTodaysSpecial} className="btn "> + </button>
-                        <button type="button" className="btn "> Today's Special </button>
-                        <button type="button" onClick={RemoveTodaysSpecial} className="btn "> - </button>
+                        <button type="button" onClick={AddTodaysSpecial} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Today's Special </button>
+                        <button type="button" onClick={RemoveTodaysSpecial} className="btn btn-minus"> - </button>
                     </div>
             </div>
             <button type="submit" onClick={SubmitVal}> <Link to="/OrderNow"> Order Now </Link> </button>

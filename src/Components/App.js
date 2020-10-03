@@ -7,9 +7,11 @@ import Register from '../Pages/Register';
 import About from '../Pages/About';
 import Error from '../Pages/Error';
 import Contact from '../Pages/Contact';
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Payments from '../Pages/Payments';
+import Plans from '../Pages/Plans';
+import Subscribe from '../Pages/Subscribe'
 import OrderNow from '../Pages/OrderNow';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -22,9 +24,15 @@ function App() {
           </Route>
           <Route exact path="/register" component = {Register}>
           </Route>
-          <Route exact path="/contact" component = {Contact}>
+          <Route exact path="/Contact" component = {Contact}>
           </Route>
-          <Route exact path="/ordernow" component = {OrderNow}>
+          <Route exact path="/OrderNow" component = {OrderNow}>
+          </Route>
+          <Route exact path="/plans" component = {Plans}>
+          </Route>
+          <Route exact path="/payment" component = {Payments}>
+          </Route>
+          <Route exact path="/subscribe" component = {Subscribe}>
           </Route>
           <Route path="*" component = {Error}>
           </Route>

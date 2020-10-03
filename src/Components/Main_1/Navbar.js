@@ -14,7 +14,7 @@ function Navbar(props) {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>                        
                 </button>
-                <a className="navbar-brand logo" href="#">
+                <a className="navbar-brand logo" href="/">
                   <p className="logo">getmytiffin.ca</p>
                 </a>
               </div>
@@ -26,12 +26,12 @@ function Navbar(props) {
                   <li><a href="#">Contact Us</a></li>
                 </ul> */}
                 <ul className="nav navbar-nav navbar-right">
-                <li><a href="#OrderNow">Order Now</a></li>
-                  <li><a href="#Plans">See Our Plans</a></li>
-                  <li><a href="#AboutUs">Our Story</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#"> Register</a></li>
-                  <li><a href="#"> Subscribe</a></li>
+                  <li><a href="/OrderNow">Order Now</a></li>
+                  <li><a href="/Plans">See Our Plans</a></li>
+                  <li><a href="/About">Our Story</a></li>
+                  <li><a href="/Contact">Contact Us</a></li>
+                  <li><a href="/Register"> Register</a></li>
+                  <li><a href="/Subscribe"> Subscribe</a></li>
                 </ul>
               </div>
             </div>
