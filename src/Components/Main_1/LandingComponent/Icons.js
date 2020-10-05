@@ -34,7 +34,7 @@ function Item(props)
                 <div className = "row">
                     <center><div className = "col-md-10 col-sm-10">
                         <h3 className = "try_now">Not sure about the plans?</h3> <br/>
-                        <a href = "#OrderNow"><button className = "btn btn-lg btn_try_now" >Try Now</button></a>
+                        <a href = "/OrderNow"><button className = "btn btn-lg btn_try_now" >Try Now</button></a>
                     </div></center>
 					<div className = "col-md-2 col-sm-2">
                     </div>

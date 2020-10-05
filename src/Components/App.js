@@ -20,19 +20,19 @@ function App() {
         <Switch>
           <Route exact path="/" component = {Home}>
           </Route>
-          <Route exact path="/about" component = {About}>
+          <Route exact path="/About" component = {About}>
           </Route>
-          <Route exact path="/register" component = {Register}>
+          <Route exact path="/Register" component = {Register}>
           </Route>
           <Route exact path="/Contact" component = {Contact}>
           </Route>
           <Route exact path="/OrderNow" component = {OrderNow}>
           </Route>
-          <Route exact path="/plans" component = {Plans}>
+          <Route exact path="/Plans" component = {Plans}>
           </Route>
-          <Route exact path="/payment" component = {Payments}>
+          <Route exact path="/Payment" component = {Payments}>
           </Route>
-          <Route exact path="/subscribe" component = {Subscribe}>
+          <Route exact path="/Subscribe" component = {Subscribe}>
           </Route>
           <Route path="*" component = {Error}>
           </Route>
