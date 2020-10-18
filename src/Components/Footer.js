@@ -11,11 +11,15 @@ function Footer () {
             <footer className="footer">
                 <div className="container container1">
                     <div className="row">
-                        <div className="col-12 col-md-4 footer-menu">
+                        <div className = "col-sm-12 col-md-12">
+                            <p className="logo-footer">getmytiffin.ca</p>
+                        </div>
+                    </div>
+                    <div className = "row">
+                        <div className="col-12 col-md-6 footer-menu">
+                            <div className = "row">
+                                <div className = "col-md-6 col-sm-6">
                                     <ul>
-                                        <li>
-                                            <a href="about.html">About Us</a>
-                                        </li>
                                         <li>
                                             <a href="chef.html">Meet Our Chef</a>
                                         </li>
@@ -28,21 +32,12 @@ function Footer () {
                                         <li>
                                             <a href="refund_policy.html">Refund Policy</a>
                                         </li>
-                                        <li>
-                                            <a href="contact.html">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="faq.html">FAQ</a>
-                                        </li>
                                     </ul>
-                        </div>
-                        <div className = "col-md-4 col-sm-4">
+                                </div>
+                                <div className = "col-md-6 col-sm-6 footer-middle-col">
                                     <ul>
                                         <li>
                                             <a href="index.html#">Career</a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html#">Blog</a>
                                         </li>
                                         <li>
                                             <a href="index.html#">Become a Partner</a>
@@ -50,24 +45,31 @@ function Footer () {
                                         <li>
                                             <a href="feedback.html">Feedback</a>
                                         </li>
-                                </ul>
+                                        <li>
+                                            <a href="faq.html">FAQ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                                    
                         </div>
-                        <div className="col-12 col-md-4 footer-soc">
-                            <a href="#"><img src= {Twitter} alt="#" /></a>
-                            <a href="#"><img src= {Facebook} alt="#" /></a>
-                            <a href="#"><img src= {Instagram} alt="#" /></a><br/><br/>
-                            <p>Subscribe now for newsletters and<br/>exciting offers</p>
+                        
+                        <div className="col-12 col-md-6 footer-soc">
+                            <a href="#" className = "twitter"><img src= {Twitter} alt="#" /></a>
+                            <a href="#" className = "facebook"><img src= {Facebook} alt="#" /></a>
+                            <a href="#" className = "instagram"><img src= {Instagram} alt="#" /></a><br/><br/>
+                            <p className = "subscribe-now-text">Subscribe now for newsletters and<br/>exciting offers</p>
                             <form>
-                                <input type="email" className = "form" name="email" id="news_email" placeholder="Enter Email ID" />
-                                <button type="submit" className = "btn">Subscribe</button>
+                                <input type="email" className = "form-control form-email-subscribe" name="email" id="news_email" placeholder="Enter Email ID" />
+                                <button type="submit" className = "btn btn-success btn-subscribe-home">Subscribe</button>
                             </form>
                         </div>
-                    </div>
+                    </div><br/><br/>
                     <div className = "row">
                         <div className="col-12 footer-copyright">
                             <center><p>Copyright getmytiffin.ca 2020, All rights reserved</p></center>
                         </div>
-                    </div>
+                    </div><br/><br/>
                 </div>
             </footer>
         </div>

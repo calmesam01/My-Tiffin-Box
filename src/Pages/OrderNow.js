@@ -1,5 +1,4 @@
 import React from 'react';
-import Payments from '../Components/Payment';
 import {useState} from 'react';
 import ButtonGroup from '../Components/ButtonGroup';
 import Tiffin from '../media/images/tiffin5.svg';

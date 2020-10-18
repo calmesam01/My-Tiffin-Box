@@ -2,7 +2,7 @@
 
     footer {
         background-size: 100% 100%;
-        padding-top: 30vw;
+        padding-top: 32vw;
         background-color: transparent;
         background-image: url('../images//shape2.png');
         background-repeat: no-repeat;
@@ -11,6 +11,14 @@
         padding-right: 0%;
         z-index: 1;
         color: white;
+        font-size: 17px;
+    }
+    .footer-soc {
+        font-family: optima;
+        padding-left: 15%;
+    }
+    .footer-middle-col {
+        padding-right: 30px;
     }
     li {
         list-style-type: none;
@@ -18,7 +26,30 @@
     }
     a {
         color: white;
-        font-size: 16px;
         font-family: optima;
+    }
+    .twitter  {
+        padding: 5px;
+    }
+    .facebook  {
+        padding: 5px;
+    }
+    .instagram  {
+        padding: 5px;
+    }
+    .logo-footer {
+        color: white;
+        margin-left: 3.2%;
+        font-size: 50px;
+        padding-bottom: 20px;
+        font-family: optima;
+        font-weight: bold;
+    }
+    .btn-subscribe-home {
+        background-color: white !important;
+        color: #16b171 !important;
+    }
+    .form-email-subscribe {
+        width: 60%;
     }
 }

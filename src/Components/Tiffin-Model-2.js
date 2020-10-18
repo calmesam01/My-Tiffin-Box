@@ -1,7 +1,5 @@
 import React from 'react';
-import Main_1 from '../Components/Main_1/Main_1';
-import TiffinGallary from '../Components/TiffinGallary';
-import ButtonGroup from '../Components/ButtonGroup';
+
 import Tiffin from '../media/images/tiffin5.svg';
 import Roti from '../media/images/roti.svg';
 import Kadi from '../media/images/kadi.svg';
@@ -14,26 +12,15 @@ import Bhindi from '../media/images/bhindi.svg';
 import Dahi from '../media/images/dahi.svg';
 import Salad from '../media/images/salad.svg';
 import Gulab_Jamun from '../media/images/gulab_jamun.svg';
-import Landing_Image from '../media/images/landing_image.jpg';
-import {
-    Link
-  } from "react-router-dom";
 
-
-function Home () {
-    var data = 'some data';
+function TiffinModel_2 (props) {
     return (
         <div>
-            <div className = "main_1">
-                <Main_1 />
-            </div>
-            <hr/>
-            <div>
-                <TiffinGallary />
-            </div>
-            <hr/>
+            <img className = "tiffin-box-model-2" src = {props.Src2} style = {{maxWidth: "120%", maxHeight: "120%", padding: "0px 5px 0px 5px"}} />
+            {/* <img className = "tiffin-box-model-3" src = {props.Src3} style = {{maxWidth: "25%", maxHeight: "25%"}} />
+            <img className = "tiffin-box-model-4" src = {props.Src4} style = {{maxWidth: "25%", maxHeight: "25%"}} /> */}
         </div>
     );
 };
 
-export default Home;
+export default TiffinModel_2; 

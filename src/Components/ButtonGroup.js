@@ -1,5 +1,10 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
 import '../media/css/home.css'
+import TiffinModel_1 from './Tiffin-Model-1';
+import TiffinModel_2 from './Tiffin-Model-2';
+import TiffinModel_3 from './Tiffin-Model-3';
+import TiffinModel_4 from './Tiffin-Model-4';
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Tiffin from '../media/images/tiffin5.svg';
@@ -14,33 +19,51 @@ import Bhindi from '../media/images/bhindi.svg';
 import Dahi from '../media/images/dahi.svg';
 import Salad from '../media/images/salad.svg';
 import Gulab_Jamun from '../media/images/gulab_jamun.svg';
+import Todays_Special from '../media/images/todays_special.svg';
 import '../media/css/Tiffin-Model/tiffin_model.css';
+import { Remove } from '@material-ui/icons';
 
 
 function ButtonGroup (props) {
-    const [DalVal, setDalVal] = useState(localStorage.setItem('DalVal', ''));
-    const [KadiVal, setKadiVal] = useState(localStorage.setItem('KadiVal', ''));
-    const [RajmaVal, setRajmaVal] = useState(localStorage.setItem('RajmaVal', ''));
-    const [BhindilVal, setBhindilVal] = useState(localStorage.setItem('BhindilVal', ''));
-    const [ShahiPaneerVal, setShahiPaneerVal] = useState(localStorage.setItem('ShahiPaneerVal', ''));
-    const [MatarPaneerVal, setMatarPaneerVal] = useState(localStorage.setItem('MatarPaneerVal', ''));
+    // const [Load, setLoad] = useState(false);
+    // const [KadiVal, setKadiVal] = useState(localStorage.setItem('KadiVal', ''));
+    // const [RajmaVal, setRajmaVal] = useState(localStorage.setItem('RajmaVal', ''));
+    // const [BhindilVal, setBhindilVal] = useState(localStorage.setItem('BhindilVal', ''));
+    // const [ShahiPaneerVal, setShahiPaneerVal] = useState(localStorage.setItem('ShahiPaneerVal', ''));
+    // const [MatarPaneerVal, setMatarPaneerVal] = useState(localStorage.setItem('MatarPaneerVal', ''));
 
-    const [RotiVal, setRotiVal] = useState(localStorage.setItem('RotiVal', ''));
-    const [DahiVal, setDahiVal] = useState(localStorage.setItem('DahiVal', ''));
-    const [SaladVal, setSaladVal] = useState(localStorage.setItem('SaladVal', ''));
-    const [AchaarVal, setAchaarVal] = useState(localStorage.setItem('AchaarVal', ''));
-    const [DessertVal, setDessertVal] = useState(localStorage.setItem('DessertVal', ''));
-    const [TodaysSpecialVal, setTodaysSpecialVal] = useState(localStorage.setItem('TodaysSpecialVal', ''));
+    // const [RotiVal, setRotiVal] = useState(localStorage.setItem('RotiVal', ''));
+    // const [DahiVal, setDahiVal] = useState(localStorage.setItem('DahiVal', ''));
+    // const [SaladVal, setSaladVal] = useState(localStorage.setItem('SaladVal', ''));
+    // const [AchaarVal, setAchaarVal] = useState(localStorage.setItem('AchaarVal', ''));
+    // const [DessertVal, setDessertVal] = useState(localStorage.setItem('DessertVal', ''));
+    // const [TodaysSpecialVal, setTodaysSpecialVal] = useState(localStorage.setItem('TodaysSpecialVal', ''));
+
     
     //Items Array for pusing into the local storage
     var itemsArray = {};
+    var myArr = [];
+    // const [MyArrF, setMyArrF] = useState([]);
+
+    const [Item_1_Empty, SetItem_1_Empty] = useState(true);
+    const [Item_2_Empty, SetItem_2_Empty] = useState(true);
+    const [Item_3_Empty, SetItem_3_Empty] = useState(true);
+    const [Item_4_Empty, SetItem_4_Empty] = useState(true);
 
     //The counter has value between 0 and 4 where 0 means tiffin is empty
     var counter = 0;
+    const [count, setCount] = useState(0);
+    const [Item_1, setItem_1] = useState(Tiffin);
+    const [Item_2, setItem_2] = useState(Tiffin);
+    const [Item_3, setItem_3] = useState(Tiffin);
+    const [Item_4, setItem_4] = useState(Tiffin);
 
-    const [myArr_1, setmyArr_1] = useState(localStorage.setItem('myArr_1', ''));
-
-    var DalCounter = 0;
+    const [Src_1, setSrc_1] = useState(Tiffin);
+    const [Src_2, setSrc_2] = useState(Tiffin);
+    const [Src_3, setSrc_3] = useState(Tiffin);
+    const [Src_4, setSrc_4] = useState(Tiffin);
+    // const [myArr_1, setmyArr_1] = useState(localStorage.setItem_1('myArr_1', ''));
+    const [AddToCart, SetAddToCart] = useState(false);
     var KadiCounter = 0;
     var RajmaCounter = 0;
     var BhindiCounter = 0;
@@ -56,76 +79,199 @@ function ButtonGroup (props) {
 
     //Setters for adding value into the Tiffin Model in Local Storage
 
-    function AddDal (event) {
+    function AddDaal (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Dal) {
-                itemsArray.Dal += 1;
+        if (count >= 0 && count <= 3) {
+            // if (itemsArray.Daal) {
+            //     itemsArray.Daal += 1;
+            // }
+            // else {
+            //     itemsArray.Daal = 1;
+            // }
+            
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Daal);
+                setCount(count+1);
             }
             else {
-                itemsArray.Dal = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Daal);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Daal);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Daal);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
+            
         }  
+        console.log(count);
     }
     function AddKadi (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Kadi) {
-                itemsArray.Kadi += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Kadi);
+                setCount(count+1);
             }
             else {
-                itemsArray.Kadi = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Kadi);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Kadi);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Kadi);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
         }  
     }
     function AddRajma (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Rajma) {
-                itemsArray.Rajma += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Rajma);
+                setCount(count+1);
             }
             else {
-                itemsArray.Rajma = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Rajma);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Rajma);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Rajma);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
-        } 
+        }
     }
     function AddBhindi (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Bhindi) {
-                itemsArray.Bhindi += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Bhindi);
+                setCount(count+1);
             }
             else {
-                itemsArray.Bhindi = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Bhindi);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Bhindi);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Bhindi);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
-        }   
+        }  
     }
     function AddShahiPaneer (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.ShahiPaneer) {
-                itemsArray.ShahiPaneer += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Shahi_Paneer);
+                setCount(count+1);
             }
             else {
-                itemsArray.ShahiPaneer = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Shahi_Paneer);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Shahi_Paneer);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Shahi_Paneer);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
         }  
     }
     function AddMatarPaneer (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.MatarPaneer) {
-                itemsArray.MatarPaneer += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Matar_Paneer);
+                setCount(count+1);
             }
             else {
-                itemsArray.MatarPaneer = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Matar_Paneer);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Matar_Paneer);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Matar_Paneer);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
         }  
     }
 
@@ -140,144 +286,345 @@ function ButtonGroup (props) {
     }
     function AddDahi (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Dahi) {
-                itemsArray.Dahi += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Dahi);
+                setCount(count+1);
             }
             else {
-                itemsArray.Dahi = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Dahi);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Dahi);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Dahi);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
         }  
     }
     function AddSalad (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Salad) {
-                itemsArray.Salad += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Salad);
+                setCount(count+1);
             }
             else {
-                itemsArray.Salad = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Salad);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Salad);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Salad);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
-        } 
-    }
-    function AddAchaar (event) {
-        event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Achaar) {
-                itemsArray.Achaar += 1;
-            }
-            else {
-                itemsArray.Achaar = 1;
-            }
-            counter+=1;
         }   
     }
-    function AddDessert (event) {
+    function AddRice (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.Dessert) {
-                itemsArray.Dessert += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Rice);
+                setCount(count+1);
             }
             else {
-                itemsArray.Dessert = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Rice);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Rice);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Rice);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
+        }  
+    }
+    function AddGulabJamun (event) {
+        event.preventDefault();
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Gulab_Jamun);
+                setCount(count+1);
+            }
+            else {
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Gulab_Jamun);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Gulab_Jamun);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Gulab_Jamun);
+                            setCount(count+1);
+                        }
+                    }
+                }
+            }
         }  
     }
     function AddTodaysSpecial (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (itemsArray.TodaysSpecial) {
-                itemsArray.TodaysSpecial += 1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Todays_Special);
+                setCount(count+1);
             }
             else {
-                itemsArray.TodaysSpecial = 1;
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Todays_Special);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Todays_Special);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Todays_Special);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
-            counter+=1;
         }  
     }
-
     //Setters for removing value into the Tiffin Model in Local Storage
-
-    function RemoveDal (event) {
+    function RemoveDaal (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Dal > 1) {
-                itemsArray.Dal -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Daal) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
             }
-            else if (itemsArray.Dal == 1) {
-                delete itemsArray["Dal"];
-                counter -= 1;
+            else {
+                if (!Item_2_Empty && Item_2 == Daal) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Daal) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Daal) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }   
+                    }
+                }
             }
-        } 
+        }
     }
+            
     function RemoveKadi (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Kadi > 1) {
-                itemsArray.Kadi -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Kadi) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
             }
-            else if (itemsArray.Kadi == 1) {
-                delete itemsArray["Kadi"];
-                counter -= 1;
+            else {
+                if (!Item_2_Empty && Item_2 == Kadi) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Kadi) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Kadi) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }
+                    }
+                }
             }
-        } 
+        }
     }
     function RemoveRajma (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Rajma > 1) {
-                itemsArray.Rajma -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Rajma) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
             }
-            else if (itemsArray.Rajma == 1) {
-                delete itemsArray["Rajma"];
-                counter -= 1;
+            else {
+                if (!Item_2_Empty && Item_2 == Rajma) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Rajma) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Rajma) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }
+                    }
+                }
             }
-        } 
+        }
     }
     function RemoveBhindi (event) {
-        event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Bhindi > 1) {
-                itemsArray.Bhindi -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Bhindi) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Bhindi) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Bhindi) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Bhindi) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.Bhindi == 1) {
-                delete itemsArray["Bhindi"];
-                counter -= 1;
-            }
-        } 
+        }
     }
     function RemoveShahiPaneer (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.ShahiPaneer > 1) {
-                itemsArray.ShahiPaneer -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Shahi_Paneer) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Shahi_Paneer) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Shahi_Paneer) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Shahi_Paneer) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.ShahiPaneer == 1) {
-                delete itemsArray["ShahiPaneer"];
-                counter -= 1;
-            }
-        } 
+        }
     }
     function RemoveMatarPaneer (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.MatarPaneer > 1) {
-                itemsArray.MatarPaneer -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Matar_Paneer) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Matar_Paneer) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Matar_Paneer) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Matar_Paneer) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.MatarPaneer == 1) {
-                delete itemsArray["MatarPaneer"];
-                counter -= 1;
-            }
-        } 
+        }
     }
     
     function RemoveRoti (event) {
@@ -288,87 +635,190 @@ function ButtonGroup (props) {
     }
     function RemoveDahi (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Dahi > 1) {
-                itemsArray.Dahi -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Dahi) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Dahi) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Dahi) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Dahi) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.Dahi == 1) {
-                delete itemsArray["Dahi"];
-                counter -= 1;
-            }
-        } 
+        }
     }
     function RemoveSalad (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Salad > 1) {
-                itemsArray.Salad -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Salad) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Salad) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Salad) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Salad) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.Salad == 1) {
-                delete itemsArray["Salad"];
-                counter -= 1;
-            }
-        } 
+        }
     }
-    function RemoveAchaar (event) {
+    function RemoveRice (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Achaar > 1) {
-                itemsArray.Achaar -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Rice) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Rice) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Rice) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Rice) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.Achaar == 1) {
-                delete itemsArray["Achaar"];
-                counter -= 1;
-            }
-        } 
+        }
     }
-    function RemoveDessert (event) {
+    function RemoveGulabJamun (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.Dessert > 1) {
-                itemsArray.Dessert -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Gulab_Jamun) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Gulab_Jamun) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Gulab_Jamun) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Gulab_Jamun) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.Dessert == 1) {
-                delete itemsArray["Dessert"];
-                counter -= 1;
-            }
-        } 
+        }
     }
     function RemoveTodaysSpecial (event) {
         event.preventDefault();
-        if (counter > 0) {
-            if (itemsArray.TodaysSpecial > 1) {
-                itemsArray.TodaysSpecial -= 1;
-                counter -= 1;
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Todays_Special) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Todays_Special) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Todays_Special) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Todays_Special) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
             }
-            else if (itemsArray.TodaysSpecial == 1) {
-                delete itemsArray["TodaysSpecial"];
-                counter -= 1;
-            }
-        } 
+        }
     }
+
+
+    useEffect (() => {
+        setSrc_1(Item_1);
+        setSrc_2(Item_2);
+        setSrc_3(Item_3);
+        setSrc_4(Item_4);
+    }, [Item_1, Item_2, Item_3, Item_4, Item_1_Empty, Item_2_Empty, Item_3_Empty, Item_4_Empty]);
+
 
     //Final Setter for Local Storage
     function SubmitVal () {
-        localStorage.setItem('DalVal', DalCounter);
-        localStorage.setItem('KadiVal', KadiCounter);
-        localStorage.setItem('RajmaVal', RajmaCounter);
-        localStorage.setItem('BhindilVal', BhindiCounter);
-        localStorage.setItem('ShahiPaneerVal', ShahiPaneerCounter);
-        localStorage.setItem('MatarPaneerVal', MatarPaneerCounter);
+        // localStorage.setItem('DaalVal', DaalCounter);
+        // localStorage.setItem('KadiVal', KadiCounter);
+        // localStorage.setItem('RajmaVal', RajmaCounter);
+        // localStorage.setItem('BhindilVal', BhindiCounter);
+        // localStorage.setItem('ShahiPaneerVal', ShahiPaneerCounter);
+        // localStorage.setItem('MatarPaneerVal', MatarPaneerCounter);
 
-        localStorage.setItem('RotiVal', RotiCounter);
-        localStorage.setItem('DahiVal', DahiCounter);
-        localStorage.setItem('SaladVal', SaladCounter);
-        localStorage.setItem('AchaarVal', AchaarCounter);
-        localStorage.setItem('DessertVal', DessertCounter);
-        localStorage.setItem('TodaysSpecialVal', TodaysSpecialCounter);
-
-        localStorage.setItem('myArr_1', JSON.stringify(itemsArray));
+        // localStorage.setItem('RotiVal', RotiCounter);
+        // localStorage.setItem('DahiVal', DahiCounter);
+        // localStorage.setItem('SaladVal', SaladCounter);
+        // localStorage.setItem('AchaarVal', AchaarCounter);
+        // localStorage.setItem('DessertVal', DessertCounter);
+        // localStorage.setItem('TodaysSpecialVal', TodaysSpecialCounter);
+        // localStorage.setItem('myArr_1', JSON.stringify(itemsArray));
+        // console.log(myArr);
+        // console.log(MyArrF)
+        SetAddToCart(true);
+        console.log(Src_1);
+        console.log(Src_2);
     }
  
 
@@ -383,9 +833,9 @@ function ButtonGroup (props) {
             <div className = "col-sm-4 col-md-4">
                 <center><div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDal} className="btn btn-plus "> + </button>
+                        <button type="button" onClick= {AddDaal} className="btn btn-plus "> + </button>
                         <button type="button" className="btn btn-item"> Daal </button>
-                        <button type="button" onClick={RemoveDal} className="btn btn-minus"> - </button>
+                        <button type="button" onClick={RemoveDaal} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddKadi} className="btn btn-plus"> + </button>
@@ -403,9 +853,9 @@ function ButtonGroup (props) {
                         <button type="button" onClick={RemoveBhindi} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDessert} className="btn btn-plus"> + </button>
+                        <button type="button" onClick={AddShahiPaneer} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Shahi Paneer </button>
-                        <button type="button" onClick={RemoveDessert} className="btn btn-minus"> - </button>
+                        <button type="button" onClick={RemoveShahiPaneer} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddMatarPaneer} className="btn btn-plus"> + </button>
@@ -416,24 +866,46 @@ function ButtonGroup (props) {
             </div>
             <div className = "col-md-4 col-sm-4">
                         <center>
-                        <img className = "tiffin-box-model-1" src = {Salad} style = {{maxWidth: "25%", maxHeight: "25%"}} />
-                        <img className = "tiffin-box-model-2" src = {Shahi_Paneer} style = {{maxWidth: "25%", maxHeight: "25%"}} />
-                        <img className = "tiffin-box-model-3" src = {Gulab_Jamun} style = {{maxWidth: "25%", maxHeight: "25%"}} />
-                        <img className = "tiffin-box-model-4" src = {Matar_Paneer} style = {{maxWidth: "25%", maxHeight: "25%"}} />
+                            <div className = "row">
+                                <div className = "col-md-3">
+                                    <TiffinModel_1 Src1 = {Src_1} />
+                                </div>
+                                <div className = "col-md-3">
+                                    <TiffinModel_2 Src2 = {Src_2} />
+                                </div>
+                                <div className = "col-md-3">
+                                    <TiffinModel_3 Src3 = {Src_3} />
+                                </div>
+                                <div className = "col-md-3">
+                                    <TiffinModel_4 Src4 = {Src_4} />
+                                </div>
+                            </div>
                         </center>
-                        <div className = "col-sm-12 col-md-12"><br/><br/><br/><br/><br/><br/>
+                        <div className = "col-sm-12 col-md-12">
                             <center>
-                                <button type="submit" className = "btn btn-checkout" onClick={SubmitVal}> <Link to="/Payment"> Order Now </Link> </button>
+                                {AddToCart &&
+                                <div className = "order-final jumbotron">
+                                    <p className="h4 mb-12 your-order-label">YOUR ORDER</p>
+                                    <div className = "row">
+                                        <div className = "col-sm-12 col-md-6">
+                                            <p className="h4 mb-12 your-order">Salad x 1</p>
+                                            <p className="h4 mb-12 your-order">Shahi Paneer x 1</p>
+                                        </div>
+                                        <div className = "col-sm-12 col-md-6">
+                                            <p className="h4 mb-12 your-order">Gulab Jamun x 1</p>
+                                            <p className="h4 mb-12 your-order">Matar Paneer x 1</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>}
+                                {!AddToCart && <button type="submit" className = "btn btn-checkout" onClick={SubmitVal}>  ADD TO CART </button>}
+                                <br/>
+                                {AddToCart && <Link to="/Payment"><button type="submit" className = "btn btn-checkout" >  PROCEED TO PAYMENT </button></Link>}
                             </center>
             </div>
             </div>
             <div className = "col-sm-4 col-md-4">
             <center><div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
-                    <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
-                        <button type="button" className="btn btn-item"> Roti </button>
-                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
-                    </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddDahi} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Dahi </button>
@@ -445,14 +917,19 @@ function ButtonGroup (props) {
                         <button type="button" onClick={RemoveSalad} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddAchaar} className="btn btn-plus"> + </button>
-                        <button type="button" className="btn btn-item"> Achaar </button>
-                        <button type="button" onClick={RemoveAchaar} className="btn btn-minus"> - </button>
+                        <button type="button" onClick={AddRice} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Rice </button>
+                        <button type="button" onClick={RemoveRice} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDessert} className="btn btn-plus"> + </button>
-                        <button type="button" className="btn btn-item"> Dessert </button>
-                        <button type="button" onClick={RemoveDessert} className="btn btn-minus"> - </button>
+                        <button type="button" onClick={AddGulabJamun} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Gulab Jamun </button>
+                        <button type="button" onClick={RemoveGulabJamun} className="btn btn-minus"> - </button>
+                    </div>
+                    <div className="btn-group-horizontal">
+                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
+                        <button type="button" className="btn btn-item"> Roti <input type = "text" style = {{width: "30px", height: "27px", color: "black", padding: "2px"}}></input> </button>
+                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddTodaysSpecial} className="btn btn-plus"> + </button>
@@ -460,9 +937,6 @@ function ButtonGroup (props) {
                         <button type="button" onClick={RemoveTodaysSpecial} className="btn btn-minus"> - </button>
                     </div>
                 </div></center>
-            </div>
-            <div className = "col-sm-12 col-md-12">
-                <center><button type="submit" className = "btn btn-success" onClick={SubmitVal}> <Link to="/Payment"> Order Now </Link> </button></center>
             </div>
         </div>
     );

@@ -43,5 +43,21 @@
     .main_1_hr {
         width: 70%;
     }
+    .tiffin-gallary-item {
+        width: 55%;
+        height: 55%;
+    }
+    .our-menu-text {
+        text-align: center;
+        color: #16b171;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: optima;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+    body {
+        scroll-behavior: smooth;
+    }
 
 }
