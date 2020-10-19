@@ -20,29 +20,28 @@ import Dahi from '../media/images/dahi.svg';
 import Salad from '../media/images/salad.svg';
 import Gulab_Jamun from '../media/images/gulab_jamun.svg';
 import Todays_Special from '../media/images/todays_special.svg';
-import '../media/css/Tiffin-Model/tiffin_model.css';
-import { Remove } from '@material-ui/icons';
+import '../media/css/Tiffin-Model/tiffin_model.css'; 
 
 
 function ButtonGroup (props) {
-    // const [Load, setLoad] = useState(false);
-    // const [KadiVal, setKadiVal] = useState(localStorage.setItem('KadiVal', ''));
-    // const [RajmaVal, setRajmaVal] = useState(localStorage.setItem('RajmaVal', ''));
-    // const [BhindilVal, setBhindilVal] = useState(localStorage.setItem('BhindilVal', ''));
-    // const [ShahiPaneerVal, setShahiPaneerVal] = useState(localStorage.setItem('ShahiPaneerVal', ''));
-    // const [MatarPaneerVal, setMatarPaneerVal] = useState(localStorage.setItem('MatarPaneerVal', ''));
 
-    // const [RotiVal, setRotiVal] = useState(localStorage.setItem('RotiVal', ''));
-    // const [DahiVal, setDahiVal] = useState(localStorage.setItem('DahiVal', ''));
-    // const [SaladVal, setSaladVal] = useState(localStorage.setItem('SaladVal', ''));
-    // const [AchaarVal, setAchaarVal] = useState(localStorage.setItem('AchaarVal', ''));
-    // const [DessertVal, setDessertVal] = useState(localStorage.setItem('DessertVal', ''));
-    // const [TodaysSpecialVal, setTodaysSpecialVal] = useState(localStorage.setItem('TodaysSpecialVal', ''));
+    const [itemsArray, setItemsArray] = useState([{}]);
+
+    var orderArr = [];
+    
+    var a = [];
+    var b = [];
+    var prev;
+    
+    var Order_Item_1 = '';
+    var Order_Item_2 = '';
+    var Order_Item_3 = '';
+    var Order_Item_4 = '';
+
+    const [Items, setItems] = useState([]);
+    const [ItemsCount, setItemsCount] = useState([]);
 
     
-    //Items Array for pusing into the local storage
-    var itemsArray = {};
-    var myArr = [];
     // const [MyArrF, setMyArrF] = useState([]);
 
     const [Item_1_Empty, SetItem_1_Empty] = useState(true);
@@ -62,8 +61,12 @@ function ButtonGroup (props) {
     const [Src_2, setSrc_2] = useState(Tiffin);
     const [Src_3, setSrc_3] = useState(Tiffin);
     const [Src_4, setSrc_4] = useState(Tiffin);
-    // const [myArr_1, setmyArr_1] = useState(localStorage.setItem_1('myArr_1', ''));
+
+    const [myArr_1, setmyArr_1] = useState(localStorage.setItem('myArr_1', ''));
+    const [myArr_2, setmyArr_2] = useState(localStorage.setItem('myArr_2', ''));
+
     const [AddToCart, SetAddToCart] = useState(false);
+
     var KadiCounter = 0;
     var RajmaCounter = 0;
     var BhindiCounter = 0;
@@ -277,10 +280,32 @@ function ButtonGroup (props) {
 
     function AddRoti (event) {
         event.preventDefault();
-        if (counter >= 0 && counter <= 3) {
-            if (!itemsArray.Roti) {
-                itemsArray.Roti = 1;
-                counter+=1;
+        if (count >= 0 && count <= 3) {
+            if (Item_1_Empty) {
+                SetItem_1_Empty(false);
+                setItem_1(Roti);
+                setCount(count+1);
+            }
+            else {
+                if (Item_2_Empty) {
+                    SetItem_2_Empty(false);
+                    setItem_2(Roti);
+                    setCount(count+1);
+                }
+                else {
+                    if (Item_3_Empty) {
+                        SetItem_3_Empty(false);
+                        setItem_3(Roti);
+                        setCount(count+1);
+                    }
+                    else {
+                        if (Item_4_Empty) {
+                            SetItem_4_Empty(false);
+                            setItem_4(Roti);
+                            setCount(count+1);
+                        }
+                    }
+                }
             }
         }  
     }
@@ -629,9 +654,34 @@ function ButtonGroup (props) {
     
     function RemoveRoti (event) {
         event.preventDefault();
-        if (RotiCounter >= 1) {
-            RotiCounter-=1;
-        } 
+        if (count > 0) {
+            if (!Item_1_Empty && Item_1 == Roti) {
+                SetItem_1_Empty(true);
+                setItem_1(Tiffin);
+                setCount(count-1);
+                    }
+            else {
+                if (!Item_2_Empty && Item_2 == Roti) {
+                    SetItem_2_Empty(true);
+                    setItem_2(Tiffin);
+                    setCount(count-1);
+                }
+                else {
+                    if (!Item_3_Empty && Item_3 == Roti) {
+                        SetItem_3_Empty(true);
+                        setItem_3(Tiffin);
+                        setCount(count-1);
+                    }
+                    else {
+                        if (!Item_4_Empty && Item_4 == Roti) {
+                            SetItem_4_Empty(true);
+                            setItem_4(Tiffin);
+                            setCount(count-1);
+                        }  
+                    }
+                }
+            }
+        }
     }
     function RemoveDahi (event) {
         event.preventDefault();
@@ -816,9 +866,50 @@ function ButtonGroup (props) {
         // localStorage.setItem('myArr_1', JSON.stringify(itemsArray));
         // console.log(myArr);
         // console.log(MyArrF)
+
+        Order_Item_1 = Item_1.substring(14, Item_1.length - 13);
+        Order_Item_1 = Order_Item_1.replace('_', ' ');
+        Order_Item_1 = Order_Item_1.charAt(0).toUpperCase() + Order_Item_1.slice(1);
+
+        Order_Item_2 = Item_2.substring(14, Item_2.length - 13);
+        Order_Item_2 = Order_Item_2.replace('_', ' ');
+        Order_Item_2 = Order_Item_2.charAt(0).toUpperCase() + Order_Item_2.slice(1);
+
+        Order_Item_3 = Item_3.substring(14, Item_3.length - 13);
+        Order_Item_3 = Order_Item_3.replace('_', ' ');
+        Order_Item_3 = Order_Item_3.charAt(0).toUpperCase() + Order_Item_3.slice(1);
+
+        Order_Item_4 = Item_4.substring(14, Item_4.length - 13);
+        Order_Item_4 = Order_Item_4.replace('_', ' ');
+        Order_Item_4 = Order_Item_4.charAt(0).toUpperCase() + Order_Item_4.slice(1);
+
+        orderArr.push(Order_Item_1, Order_Item_2, Order_Item_3, Order_Item_4);
+
+        // setItemsArray([Order_Item_1, Order_Item_2, Order_Item_3, Order_Item_4]);
+        
+
+
+        orderArr.sort();
+
+        for (var i = 0; i < orderArr.length; i++) {
+            if (orderArr[i] !== prev) {
+              a.push(orderArr[i]);
+              b.push(1);
+            } else {
+              b[b.length - 1]++;
+            }
+            prev = orderArr[i];
+        }
+
+        setItems(a);
+        setItemsCount(b);
+
         SetAddToCart(true);
-        console.log(Src_1);
-        console.log(Src_2);
+    }
+
+    function Proceed () {
+        localStorage.setItem('myArr_1', Items);
+        localStorage.setItem('myArr_2', JSON.stringify(ItemsCount));
     }
  
 
@@ -887,25 +978,42 @@ function ButtonGroup (props) {
                                 <div className = "order-final jumbotron">
                                     <p className="h4 mb-12 your-order-label">YOUR ORDER</p>
                                     <div className = "row">
-                                        <div className = "col-sm-12 col-md-6">
+                                        {/* <div className = "col-sm-12 col-md-6">
                                             <p className="h4 mb-12 your-order">Salad x 1</p>
                                             <p className="h4 mb-12 your-order">Shahi Paneer x 1</p>
                                         </div>
                                         <div className = "col-sm-12 col-md-6">
                                             <p className="h4 mb-12 your-order">Gulab Jamun x 1</p>
                                             <p className="h4 mb-12 your-order">Matar Paneer x 1</p>
+                                        </div> */}
+                                        <div className = "col-sm-6 col-md-6">
+                                            <p className="h4 mb-12 your-order"> {Items[0]} </p>
+                                            <p className="h4 mb-12 your-order"> {Items[1]} </p>
+                                            <p className="h4 mb-12 your-order"> {Items[2]} </p>
+                                            <p className="h4 mb-12 your-order"> {Items[3]} </p>
+                                        </div>
+                                        <div className = "col-sm-6 col-md-6">
+                                            <p className="h4 mb-12 your-order"> {ItemsCount[0]} </p>
+                                            <p className="h4 mb-12 your-order"> {ItemsCount[1]} </p>
+                                            <p className="h4 mb-12 your-order"> {ItemsCount[2]} </p>
+                                            <p className="h4 mb-12 your-order"> {ItemsCount[3]} </p>
                                         </div>
                                     </div>
                                     
                                 </div>}
                                 {!AddToCart && <button type="submit" className = "btn btn-checkout" onClick={SubmitVal}>  ADD TO CART </button>}
                                 <br/>
-                                {AddToCart && <Link to="/Payment"><button type="submit" className = "btn btn-checkout" >  PROCEED TO PAYMENT </button></Link>}
+                                {AddToCart && <Link to="/Payment"><button type="submit" className = "btn btn-checkout" onClick={Proceed} >  PROCEED TO PAYMENT </button></Link>}
                             </center>
             </div>
             </div>
             <div className = "col-sm-4 col-md-4">
             <center><div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
+                    <div className="btn-group-horizontal">
+                        <button type="button" onClick={AddRice} className="btn btn-plus"> + </button>
+                        <button type="button" className="btn btn-item"> Rice </button>
+                        <button type="button" onClick={RemoveRice} className="btn btn-minus"> - </button>
+                    </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddDahi} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Dahi </button>
@@ -917,20 +1025,16 @@ function ButtonGroup (props) {
                         <button type="button" onClick={RemoveSalad} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRice} className="btn btn-plus"> + </button>
-                        <button type="button" className="btn btn-item"> Rice </button>
-                        <button type="button" onClick={RemoveRice} className="btn btn-minus"> - </button>
+                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
+                        <button type="button" className="btn btn-item"> Roti x 8 </button>
+                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddGulabJamun} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Gulab Jamun </button>
                         <button type="button" onClick={RemoveGulabJamun} className="btn btn-minus"> - </button>
                     </div>
-                    <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
-                        <button type="button" className="btn btn-item"> Roti <input type = "text" style = {{width: "30px", height: "27px", color: "black", padding: "2px"}}></input> </button>
-                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
-                    </div>
+                    
                     <div className="btn-group-horizontal">
                         <button type="button" onClick={AddTodaysSpecial} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Today's Special </button>

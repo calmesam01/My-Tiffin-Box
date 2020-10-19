@@ -15,18 +15,12 @@ function Payments () {
     // const [SaladVal, setSaladVal] = useState(localStorage.getItem('SaladVal'));
     // const [AchaarVal, setAchaarVal] = useState(localStorage.getItem('AchaarVal'));
     // const [DessertVal, setDessertVal] = useState(localStorage.getItem('DessertVal'));
-    // const [TodaysSpecialVal, setTodaysSpecialVal] = useState(localStorage.getItem('TodaysSpecialVal'));
-    const cookies = new Cookies();
-    const [myArr_1, setmyArr_1] = useState(localStorage.getItem('myArr_1'));
-    var Dahi = 1;
-    var Salad = 2;
-    var Achaar = 0;
-    var Dessert = 0;
-    var TodaysSpecial = 0;
-    var arr_2 = [Dahi, Salad, Achaar, Dessert, TodaysSpecial];
-    var arr_3 = ['Dahi', 'Dahi', 'Salad', 'Dessert'];
-    console.log(JSON.parse(myArr_1));
 
+    const [myArr_1, setmyArr_1] = useState(localStorage.getItem('myArr_1'));
+    const [myArr_2, setmyArr_2] = useState(localStorage.getItem('myArr_2'));
+
+        var ttc = myArr_1.split('"');
+        var ttc1 = myArr_1[0]
     
     return (
         <div className = "Payments">
@@ -62,7 +56,7 @@ function Payments () {
                         </div>
                         <div className = "row order-summary-div">
                             <div className = "col-md-7 col-sm-12 order-summary">
-                                <p className="h4 mb-12 tiffin-summary-img-1-text">Daal</p>
+                                <p className="h4 mb-12 tiffin-summary-img-1-text">{}</p>
                                 <p className="h4 mb-12 tiffin-summary-img-2-text">Matar Paneer</p>
                                 <p className="h4 mb-12 tiffin-summary-img-3-text">Salad</p>
                                 <p className="h4 mb-12 tiffin-summary-img-4-text">Rotis</p>
@@ -109,6 +103,7 @@ function Payments () {
             <p>Salad :  {Salad} </p>
             <p> Today's Special: {TodaysSpecialVal} </p> */}
             <p> 1: {myArr_1} </p>
+            <p> 1: {myArr_2} </p>
 
         </div>
     );
