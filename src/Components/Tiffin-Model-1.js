@@ -17,8 +17,6 @@ function TiffinModel_1 (props) {
     return (
         <div>
             <img className = "tiffin-box-model-1" src = {props.Src1} style = {{maxWidth: "120%", maxHeight: "120%", padding: "0px 5px 0px 5px"}} />
-            {/* <img className = "tiffin-box-model-3" src = {props.Src3} style = {{maxWidth: "25%", maxHeight: "25%"}} />
-            <img className = "tiffin-box-model-4" src = {props.Src4} style = {{maxWidth: "25%", maxHeight: "25%"}} /> */}
         </div>
     );
 };

@@ -8,19 +8,57 @@ import MatarPaneer from '../../media/images/matar_paneer.svg';
 import Salads from '../../media/images/salad.svg';
 import Roti from '../../media/images/roti.svg';
 import TiffinFull from '../../media/images/tiffin_full.svg'
+import { LocalDining } from '@material-ui/icons';
+
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./CheckoutForm";
+
+const stripePromise = loadStripe('rk_test_51Gcks7D3IkNm36QEgRnSci22z5fJajHcxfKTRmxSCNrWKQOAwhf3xMVKmVSMMkVXmsd4WUWvSMSIWyHS8G4yNN3r00HqmcRVQj');
 
 function Payments () {
-    // const [RotiVal, setRotiVal] = useState(localStorage.getItem('RotiVal'));
-    // const [DahiVal, setDahiVal] = useState(localStorage.getItem('DahiVal'));
-    // const [SaladVal, setSaladVal] = useState(localStorage.getItem('SaladVal'));
-    // const [AchaarVal, setAchaarVal] = useState(localStorage.getItem('AchaarVal'));
-    // const [DessertVal, setDessertVal] = useState(localStorage.getItem('DessertVal'));
 
     const [myArr_1, setmyArr_1] = useState(localStorage.getItem('myArr_1'));
     const [myArr_2, setmyArr_2] = useState(localStorage.getItem('myArr_2'));
+    const [OnlinePayment, SetOnlinePayment] = useState(false);
+    const [SubTotal, SetSubTotal] = useState(0);
+    
 
-        var ttc = myArr_1.split('"');
-        var ttc1 = myArr_1[0]
+    var ttc = myArr_1.split(",");
+    var wt = myArr_2.split(",")
+    var subTotal = 0;
+    var Sub0 = 0;
+    var Sub1 = 0;
+    var Sub2 = 0;
+    var Sub3 = 0;
+    if (ttc[0] != 'Tiffin5' && wt[0]) {
+        Sub0 = parseFloat(wt[0]) * 1.25;
+    }
+    if (ttc[0] != 'Tiffin5' && wt[1]) {
+        Sub1 = parseFloat(wt[1]) * 1.25;
+    }
+    if (wt[2]) {
+        Sub2 = parseFloat(wt[2]) * 1.25;
+    }
+    if (wt[3]) {
+        Sub3 = parseFloat(wt[3]) * 1.25;
+    }
+    subTotal = Sub0 + Sub1 + Sub2 + Sub3;
+    var tax = (subTotal * 15)/100
+    var total = tax + subTotal;
+    // var tax = 13;
+    // var subTotal = 0;
+    console.log(ttc[3])
+    
+    // if (Load) {
+    //     subTotal = wt[0] + wt[1] + wt[2] + wt[3];
+    //     SetSubTotal(SubTotal + subTotal);
+    // }
+
+    function OnlinePaymentFunction () {
+        SetOnlinePayment(true);
+    }
+    
     
     return (
         <div className = "Payments">
@@ -28,13 +66,23 @@ function Payments () {
                 <div className = "col-md-6 col-sm-12">
                     <p className="h2 text-center mb-12 your-payment-details-label">Payment Details</p><br/>
                     <PaymentForm /><hr/>
-                    <div className="text-center mt-4">
-                        <p className="h3 text-center mb-12 choose-payment-option-label">Choose Payment Method</p><br/>
+                    {!OnlinePayment ? <div>
+                        <div className="text-center mt-4">
+                            <p className="h3 text-center mb-12 choose-payment-option-label">Choose Payment Method</p><br/>
+                        </div>
+                        <div className="text-center mt-4">
+                            <MDBBtn color="indigo" className = "online-payment-btn" onClick={OnlinePaymentFunction} type="submit">Online Payment</MDBBtn>
+                            <MDBBtn color="indigo" className = "cash-on-delivery-btn" type="submit">Cash on Delivery</MDBBtn>
+                        </div>
                     </div>
-                    <div className="text-center mt-4">
-                        <MDBBtn color="indigo" className = "online-payment-btn" type="submit">Online Payment</MDBBtn>
-                        <MDBBtn color="indigo" className = "cash-on-delivery-btn" type="submit">Cash on Delivery</MDBBtn>
+                    :
+                    <div className="h3 text-center mb-12 your-payment-details-label">
+                        <Elements total= {total} stripe={stripePromise}>
+                            <CheckoutForm total= {total} />
+                        </Elements>
                     </div>
+                    }
+                    
                 </div>
                 <div className = "col-md-4 col-sm-12">
                     <p className="h2 text-center mb-12 order-summary-label">Order Summary</p>
@@ -56,22 +104,22 @@ function Payments () {
                         </div>
                         <div className = "row order-summary-div">
                             <div className = "col-md-7 col-sm-12 order-summary">
-                                <p className="h4 mb-12 tiffin-summary-img-1-text">{}</p>
-                                <p className="h4 mb-12 tiffin-summary-img-2-text">Matar Paneer</p>
-                                <p className="h4 mb-12 tiffin-summary-img-3-text">Salad</p>
-                                <p className="h4 mb-12 tiffin-summary-img-4-text">Rotis</p>
+                                <p className="h4 mb-12 tiffin-summary-img-1-text">{ttc[0]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-2-text">{ttc[1]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-3-text">{ttc[2]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-4-text">{ttc[3]}</p>
                             </div>
                             <div className = "col-md-2 col-sm-12 order-summary">
-                                <p className="h4 mb-12 tiffin-summary-img-1-text">1</p>
-                                <p className="h4 mb-12 tiffin-summary-img-2-text">1</p>
-                                <p className="h4 mb-12 tiffin-summary-img-3-text">1</p>
-                                <p className="h4 mb-12 tiffin-summary-img-4-text">8</p>
+                                <p className="h4 mb-12 tiffin-summary-img-1-text">{wt[0]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-2-text">{wt[1]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-3-text">{wt[2]}</p>
+                                <p className="h4 mb-12 tiffin-summary-img-4-text">{wt[3]}</p>
                             </div>
                             <div className = "col-md-3 col-sm-12 order-summary">
-                                <p className="h4 mb-12 tiffin-summary-img-1-text">$1.25</p>
-                                <p className="h4 mb-12 tiffin-summary-img-2-text">$1.25</p>
-                                <p className="h4 mb-12 tiffin-summary-img-3-text">$1.25</p>
-                                <p className="h4 mb-12 tiffin-summary-img-4-text">$1.25</p>
+                                {wt[0] && <p className="h4 mb-12 tiffin-summary-img-1-text">$1.25</p>}
+                                {wt[1] && <p className="h4 mb-12 tiffin-summary-img-2-text">$1.25</p>}
+                                {wt[2] && <p className="h4 mb-12 tiffin-summary-img-3-text">$1.25</p>}
+                                {wt[3] && <p className="h4 mb-12 tiffin-summary-img-4-text">$1.25</p>}
                             </div>
                         </div><hr/>
                         <div className = "row">
@@ -81,9 +129,9 @@ function Payments () {
                                 <p className="h2 text-center mb-12 order-summary-total-label">TOTAL</p>
                             </div>
                             <div className = "col-md-6 col-sm-6">
-                                <p className="h2 text-center mb-12 order-summary-subtotal">$5.00</p>
-                                <p className="h2 text-center mb-12 order-summary-subtotal">$0.15</p>
-                                <p className="h2 text-center mb-12 order-summary-total">$5.15</p>
+                                <p className="h2 text-center mb-12 order-summary-subtotal">${subTotal}</p>
+                                <p className="h2 text-center mb-12 order-summary-subtotal">${tax}</p>
+                                <p className="h2 text-center mb-12 order-summary-total">${total}</p>
                             </div>
                         </div>
                     </div>
@@ -93,17 +141,12 @@ function Payments () {
                 </div>
             </div>
             
-<br/><br/>
-            {/* <p> Rotis:  {RotiVal} </p>
-            <p> Dahi:  {DahiVal} </p>
-            <p> Salad: {SaladVal} </p>
-            <p> Achaar:  {AchaarVal} </p>
-            <p> Dessert: {DessertVal} </p>
-            <p>Dahi :  {Dahi} </p>
-            <p>Salad :  {Salad} </p>
-            <p> Today's Special: {TodaysSpecialVal} </p> */}
-            <p> 1: {myArr_1} </p>
-            <p> 1: {myArr_2} </p>
+            <br/><br/>
+            {/* <p> 1: {myArr_1} </p>
+            <p> 1: {myArr_2} </p> */}
+
+            
+            
 
         </div>
     );

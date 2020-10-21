@@ -7,6 +7,7 @@ import TiffinModel_3 from './Tiffin-Model-3';
 import TiffinModel_4 from './Tiffin-Model-4';
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import Tiffin from '../media/images/tiffin5.svg';
 import Roti from '../media/images/roti.svg';
 import Kadi from '../media/images/kadi.svg';
@@ -66,19 +67,9 @@ function ButtonGroup (props) {
     const [myArr_2, setmyArr_2] = useState(localStorage.setItem('myArr_2', ''));
 
     const [AddToCart, SetAddToCart] = useState(false);
+    const [AddedToCart, SetAddedToCart] = useState(false);
 
-    var KadiCounter = 0;
-    var RajmaCounter = 0;
-    var BhindiCounter = 0;
-    var ShahiPaneerCounter = 0;
-    var MatarPaneerCounter = 0;
-
-    var RotiCounter = 0;
-    var DahiCounter = 0;
-    var SaladCounter = 0;
-    var AchaarCounter = 0;
-    var DessertCounter = 0;
-    var TodaysSpecialCounter = 0;
+    
 
     //Setters for adding value into the Tiffin Model in Local Storage
 
@@ -845,71 +836,59 @@ function ButtonGroup (props) {
         setSrc_2(Item_2);
         setSrc_3(Item_3);
         setSrc_4(Item_4);
+        if (Item_1 != Tiffin && Item_2 != Tiffin && Item_3 != Tiffin && Item_4 != Tiffin) {
+            SetAddToCart(true);
+        }
+        else {
+            SetAddToCart(false);
+        }
     }, [Item_1, Item_2, Item_3, Item_4, Item_1_Empty, Item_2_Empty, Item_3_Empty, Item_4_Empty]);
 
+    function ResetTiffin (){
+        window.location = 'http://localhost:3000/OrderNow';
+    }
 
-    //Final Setter for Local Storage
     function SubmitVal () {
-        // localStorage.setItem('DaalVal', DaalCounter);
-        // localStorage.setItem('KadiVal', KadiCounter);
-        // localStorage.setItem('RajmaVal', RajmaCounter);
-        // localStorage.setItem('BhindilVal', BhindiCounter);
-        // localStorage.setItem('ShahiPaneerVal', ShahiPaneerCounter);
-        // localStorage.setItem('MatarPaneerVal', MatarPaneerCounter);
+        if (ItemsCount[0] + Items) {
+            Order_Item_1 = Item_1.substring(14, Item_1.length - 13);
+            Order_Item_1 = Order_Item_1.replace('_', ' ');
+            Order_Item_1 = Order_Item_1.charAt(0).toUpperCase() + Order_Item_1.slice(1);
 
-        // localStorage.setItem('RotiVal', RotiCounter);
-        // localStorage.setItem('DahiVal', DahiCounter);
-        // localStorage.setItem('SaladVal', SaladCounter);
-        // localStorage.setItem('AchaarVal', AchaarCounter);
-        // localStorage.setItem('DessertVal', DessertCounter);
-        // localStorage.setItem('TodaysSpecialVal', TodaysSpecialCounter);
-        // localStorage.setItem('myArr_1', JSON.stringify(itemsArray));
-        // console.log(myArr);
-        // console.log(MyArrF)
+            Order_Item_2 = Item_2.substring(14, Item_2.length - 13);
+            Order_Item_2 = Order_Item_2.replace('_', ' ');
+            Order_Item_2 = Order_Item_2.charAt(0).toUpperCase() + Order_Item_2.slice(1);
 
-        Order_Item_1 = Item_1.substring(14, Item_1.length - 13);
-        Order_Item_1 = Order_Item_1.replace('_', ' ');
-        Order_Item_1 = Order_Item_1.charAt(0).toUpperCase() + Order_Item_1.slice(1);
+            Order_Item_3 = Item_3.substring(14, Item_3.length - 13);
+            Order_Item_3 = Order_Item_3.replace('_', ' ');
+            Order_Item_3 = Order_Item_3.charAt(0).toUpperCase() + Order_Item_3.slice(1);
 
-        Order_Item_2 = Item_2.substring(14, Item_2.length - 13);
-        Order_Item_2 = Order_Item_2.replace('_', ' ');
-        Order_Item_2 = Order_Item_2.charAt(0).toUpperCase() + Order_Item_2.slice(1);
+            Order_Item_4 = Item_4.substring(14, Item_4.length - 13);
+            Order_Item_4 = Order_Item_4.replace('_', ' ');
+            Order_Item_4 = Order_Item_4.charAt(0).toUpperCase() + Order_Item_4.slice(1);
 
-        Order_Item_3 = Item_3.substring(14, Item_3.length - 13);
-        Order_Item_3 = Order_Item_3.replace('_', ' ');
-        Order_Item_3 = Order_Item_3.charAt(0).toUpperCase() + Order_Item_3.slice(1);
+            orderArr.push(Order_Item_1, Order_Item_2, Order_Item_3, Order_Item_4);
 
-        Order_Item_4 = Item_4.substring(14, Item_4.length - 13);
-        Order_Item_4 = Order_Item_4.replace('_', ' ');
-        Order_Item_4 = Order_Item_4.charAt(0).toUpperCase() + Order_Item_4.slice(1);
+            orderArr.sort();
 
-        orderArr.push(Order_Item_1, Order_Item_2, Order_Item_3, Order_Item_4);
-
-        // setItemsArray([Order_Item_1, Order_Item_2, Order_Item_3, Order_Item_4]);
-        
-
-
-        orderArr.sort();
-
-        for (var i = 0; i < orderArr.length; i++) {
-            if (orderArr[i] !== prev) {
-              a.push(orderArr[i]);
-              b.push(1);
-            } else {
-              b[b.length - 1]++;
+            for (var i = 0; i < orderArr.length; i++) {
+                if (orderArr[i] !== prev) {
+                a.push(orderArr[i]);
+                b.push(1);
+                } else {
+                b[b.length - 1]++;
+                }
+                prev = orderArr[i];
             }
-            prev = orderArr[i];
+            setItems(a);
+            setItemsCount(b);
+            SetAddToCart(false)
+            SetAddedToCart(true);
         }
-
-        setItems(a);
-        setItemsCount(b);
-
-        SetAddToCart(true);
     }
 
     function Proceed () {
-        localStorage.setItem('myArr_1', Items);
-        localStorage.setItem('myArr_2', JSON.stringify(ItemsCount));
+        localStorage.setItem('myArr_1', (Items));
+        localStorage.setItem('myArr_2', (ItemsCount));
     }
  
 
@@ -921,41 +900,42 @@ function ButtonGroup (props) {
                     <h4>CUSTOMIZED HOME-MADE INDIAN FOOD</h4>
                 </center>
             </div>
+            <div className = "row">
             <div className = "col-sm-4 col-md-4">
                 <center><div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick= {AddDaal} className="btn btn-plus "> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick= {AddDaal} className="btn btn-plus "> + </button>
                         <button type="button" className="btn btn-item"> Daal </button>
-                        <button type="button" onClick={RemoveDaal} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveDaal} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddKadi} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddKadi} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Kadi </button>
-                        <button type="button" onClick={RemoveKadi} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveKadi} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRajma} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddRajma} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Rajma </button>
-                        <button type="button" onClick={RemoveRajma} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveRajma} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddBhindi} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddBhindi} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Bhindi </button>
-                        <button type="button" onClick={RemoveBhindi} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveBhindi} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddShahiPaneer} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddShahiPaneer} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Shahi Paneer </button>
-                        <button type="button" onClick={RemoveShahiPaneer} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveShahiPaneer} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddMatarPaneer} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddMatarPaneer} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Matar Paneer </button>
-                        <button type="button" onClick={RemoveMatarPaneer} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveMatarPaneer} className="btn btn-minus"> - </button>
                     </div>
                 </div></center>
             </div>
-            <div className = "col-md-4 col-sm-4">
+            <div className = "col-md-4 col-sm-4 tiffin-model" style = {AddedToCart ? {marginTop: "10px"} : {marginTop: "120px"}}>
                         <center>
                             <div className = "row">
                                 <div className = "col-md-3">
@@ -974,18 +954,10 @@ function ButtonGroup (props) {
                         </center>
                         <div className = "col-sm-12 col-md-12">
                             <center>
-                                {AddToCart &&
+                                {AddedToCart &&
                                 <div className = "order-final jumbotron">
                                     <p className="h4 mb-12 your-order-label">YOUR ORDER</p>
                                     <div className = "row">
-                                        {/* <div className = "col-sm-12 col-md-6">
-                                            <p className="h4 mb-12 your-order">Salad x 1</p>
-                                            <p className="h4 mb-12 your-order">Shahi Paneer x 1</p>
-                                        </div>
-                                        <div className = "col-sm-12 col-md-6">
-                                            <p className="h4 mb-12 your-order">Gulab Jamun x 1</p>
-                                            <p className="h4 mb-12 your-order">Matar Paneer x 1</p>
-                                        </div> */}
                                         <div className = "col-sm-6 col-md-6">
                                             <p className="h4 mb-12 your-order"> {Items[0]} </p>
                                             <p className="h4 mb-12 your-order"> {Items[1]} </p>
@@ -999,48 +971,59 @@ function ButtonGroup (props) {
                                             <p className="h4 mb-12 your-order"> {ItemsCount[3]} </p>
                                         </div>
                                     </div>
-                                    
                                 </div>}
-                                {!AddToCart && <button type="submit" className = "btn btn-checkout" onClick={SubmitVal}>  ADD TO CART </button>}
+                                {AddToCart && <button type="submit" className = "btn btn-checkout" style = {{marginTop: "50px"}} onClick={SubmitVal}>  ADD TO CART </button>}
                                 <br/>
-                                {AddToCart && <Link to="/Payment"><button type="submit" className = "btn btn-checkout" onClick={Proceed} >  PROCEED TO PAYMENT </button></Link>}
+                                {AddedToCart && 
+                                <div>
+                                    <div className = "row">
+                                        <div className = "col-md-6 col-sm-12">
+                                            <center><Link to="/Payment"><MDBBtn color="indigo" className = "btn btn-checkout" onClick={Proceed} type="submit">CHECKOUT</MDBBtn></Link></center>
+                                        </div>
+                                        <div className = "col-md-6 col-sm-12">
+                                        <center><MDBBtn color="indigo" className = "btn btn-checkout" onClick={ResetTiffin} type="submit">EMPTY TIFFIN</MDBBtn></center>
+                                        </div>
+                                    </div>
+                                </div>}
+                                
                             </center>
-            </div>
+                    </div>
             </div>
             <div className = "col-sm-4 col-md-4">
             <center><div className="btn-group-vertical" id="ButtonGroup" style = {{fontFamily: "optima"}}>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRice} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddRice} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Rice </button>
-                        <button type="button" onClick={RemoveRice} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveRice} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddDahi} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddDahi} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Dahi </button>
-                        <button type="button" onClick={RemoveDahi} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveDahi} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddSalad} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddSalad} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Salad </button>
-                        <button type="button" onClick={RemoveSalad} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveSalad} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddRoti} className="btn btn-plus "> + </button>
                         <button type="button" className="btn btn-item"> Roti x 8 </button>
-                        <button type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveRoti} className="btn btn-minus"> - </button>
                     </div>
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddGulabJamun} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddGulabJamun} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Gulab Jamun </button>
-                        <button type="button" onClick={RemoveGulabJamun} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveGulabJamun} className="btn btn-minus"> - </button>
                     </div>
                     
                     <div className="btn-group-horizontal">
-                        <button type="button" onClick={AddTodaysSpecial} className="btn btn-plus"> + </button>
+                        <button disabled = {AddedToCart} type="button" onClick={AddTodaysSpecial} className="btn btn-plus"> + </button>
                         <button type="button" className="btn btn-item"> Today's Special </button>
-                        <button type="button" onClick={RemoveTodaysSpecial} className="btn btn-minus"> - </button>
+                        <button disabled = {AddedToCart} type="button" onClick={RemoveTodaysSpecial} className="btn btn-minus"> - </button>
                     </div>
                 </div></center>
+            </div>
             </div>
         </div>
     );
