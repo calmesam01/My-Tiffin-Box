@@ -850,19 +850,19 @@ function ButtonGroup (props) {
 
     function SubmitVal () {
         if (ItemsCount[0] + Items) {
-            Order_Item_1 = Item_1.substring(14, Item_1.length - 13);
+            Order_Item_1 = Item_1.substring(29, Item_1.length - 13);
             Order_Item_1 = Order_Item_1.replace('_', ' ');
             Order_Item_1 = Order_Item_1.charAt(0).toUpperCase() + Order_Item_1.slice(1);
 
-            Order_Item_2 = Item_2.substring(14, Item_2.length - 13);
+            Order_Item_2 = Item_2.substring(29, Item_2.length - 13);
             Order_Item_2 = Order_Item_2.replace('_', ' ');
             Order_Item_2 = Order_Item_2.charAt(0).toUpperCase() + Order_Item_2.slice(1);
 
-            Order_Item_3 = Item_3.substring(14, Item_3.length - 13);
+            Order_Item_3 = Item_3.substring(29, Item_3.length - 13);
             Order_Item_3 = Order_Item_3.replace('_', ' ');
             Order_Item_3 = Order_Item_3.charAt(0).toUpperCase() + Order_Item_3.slice(1);
 
-            Order_Item_4 = Item_4.substring(14, Item_4.length - 13);
+            Order_Item_4 = Item_4.substring(29, Item_4.length - 13);
             Order_Item_4 = Order_Item_4.replace('_', ' ');
             Order_Item_4 = Order_Item_4.charAt(0).toUpperCase() + Order_Item_4.slice(1);
 
