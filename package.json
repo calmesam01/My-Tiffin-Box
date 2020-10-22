@@ -1,5 +1,5 @@
 {
-  "homepage": "https://calmesam01.github.io/getmytiffin.ca",
+  "homepage": "https://calmesam01.github.io/getmytiffin-ca/",
   "name": "getmytiffin.ca",
   "version": "0.1.0",
   "private": true,
@@ -25,12 +25,13 @@
     "universal-cookie": "^4.0.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d public",
-    "predeploy": "npm run build"
+    "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": "react-app"
