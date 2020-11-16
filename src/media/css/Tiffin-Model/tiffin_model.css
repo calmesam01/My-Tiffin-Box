@@ -1,0 +1,94 @@
+@media only screen and (min-width: 992px) {
+    .btn-minus {
+        border-radius: 0px;
+    }
+    .btn-plus {
+        border-radius: 0px;
+    }
+    .btn-item {
+        border-radius: 0px;
+        width: 150px;
+    }
+    .order-now-text {
+        font-weight: bolder;
+        font-family: optima;
+        font-size: 30px;
+        color: #16b171;
+    }
+    .tiffin-box-model-1 {
+        padding-top: 46px;
+        animation: fadeIn ease 2s;
+        -webkit-animation: fadeIn ease 2s;
+    }
+    .tiffin-box-model-2 {
+        
+        animation: fadeIn ease 2s;
+        -webkit-animation: fadeIn ease 2s;
+    }
+    .tiffin-box-model-3 {
+        padding-top: 46px;
+        animation: fadeIn ease 2s;
+        -webkit-animation: fadeIn ease 2s;
+    }
+    .tiffin-box-model-4 {
+        padding-top: 46px;
+        animation: fadeIn ease 2s;
+        -webkit-animation: fadeIn ease 2s;
+    }
+    /* .tiffin-model {
+        margin-top: 50px;
+    } */
+    h4 {
+        font-weight: bolder;
+        font-family: optima;
+        font-size: 15px;
+        color: #16b171;
+
+    }
+    .btn-checkout {
+        color: white;
+        margin-top: 10px;
+        font-family: optima;
+    }
+    .jumbotron {
+        padding-top: 5px;
+        margin-bottom: 5px;
+        color: #3d3835;
+        padding-bottom: 10px;
+        font-family: optima;
+        margin-top: 15px !important;
+        border-radius: 4px;
+    }
+    .fade-in-order {
+        animation: fadeIn ease 1s;
+        -webkit-animation: fadeIn ease 1s;
+    }
+    .fade-in-1 {
+        animation: fadeIn ease 1s;
+        -webkit-animation: fadeIn ease 1s;
+    }
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+        }
+        
+        @-moz-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+        }
+        
+        @-webkit-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+        }
+        
+        @-o-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+        }
+        
+        @-ms-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+        }
+}

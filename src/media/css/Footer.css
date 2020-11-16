@@ -1,0 +1,274 @@
+@media only screen and (min-width: 1200px) {
+
+    footer {
+        background-size: 100% 100%;
+        padding-top: 32vw;
+        background-color: transparent;
+        background-image: url('../images//shape2.png');
+        background-repeat: no-repeat;
+        position: relative;
+        margin-right: 0%;
+        padding-right: 0%;
+        z-index: 1;
+        color: white;
+        font-size: 17px;
+    }
+    .footer-soc {
+        padding-left: 15%;
+    }
+    .footer-middle-col {
+        padding-right: 30px;
+    }
+    li {
+        list-style-type: none;
+        margin-bottom: 8px;
+    }
+    a {
+        color: white;
+    }
+    .twitter  {
+        padding-left: 25px;
+    }
+    .facebook  {
+        padding: 5px;
+    }
+    .instagram  {
+        padding: 5px;
+    }
+    .logo-footer {
+        color: white;
+        margin-left: 3.2%;
+        font-size: 50px;
+        padding-bottom: 20px;
+        font-family: optima;
+        font-weight: bold;
+    }
+    .btn-subscribe-home {
+        color: #16b171;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 45px;
+        border: #16b171;
+        width: 120px;
+        height: 40px;
+        font-family: gdsherpa,Helvetica,Arial,sans-serif;
+        margin-top: 10px;
+        margin-left: 53px;
+        padding-bottom: 3px;
+        
+    }
+    .form-email-subscribe {
+        width: 60%;
+    }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    footer {
+        background-size: 100% 100%;
+        padding-top: 32vw;
+        background-color: transparent;
+        background-image: url('../images//shape2.png');
+        background-repeat: no-repeat;
+        position: relative;
+        margin-right: 0%;
+        padding-right: 0%;
+        z-index: 1;
+        color: white;
+        font-size: 17px;
+    }
+    .footer-soc {
+        padding-left: 15%;
+    }
+    .footer-middle-col {
+        padding-right: 30px;
+    }
+    li {
+        list-style-type: none;
+        margin-bottom: 8px;
+    }
+    a {
+        color: white;
+    }
+    .twitter  {
+        padding-left: 25px;
+    }
+    .facebook  {
+        padding: 5px;
+    }
+    .instagram  {
+        padding: 5px;
+    }
+    .logo-footer {
+        color: white;
+        margin-left: 3.2%;
+        font-size: 50px;
+        padding-bottom: 20px;
+        font-family: optima;
+        font-weight: bold;
+    }
+    .btn-subscribe-home {
+        color: #16b171;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 45px;
+        border: #16b171;
+        width: 120px;
+        height: 40px;
+        font-family: gdsherpa,Helvetica,Arial,sans-serif;
+        margin-top: 10px;
+        margin-left: 53px;
+        padding-bottom: 3px;
+        
+    }
+    .form-email-subscribe {
+        width: 70%;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    footer {
+        background-size: 100% 100%;
+        padding-top: 38vw;
+        background-color: transparent;
+        background-image: url('../images//shape2.png');
+        background-repeat: no-repeat;
+        position: relative;
+        margin-right: 0%;
+        padding-right: 0%;
+        z-index: 1;
+        color: white;
+        font-size: 17px;
+    }
+    .footer-soc {
+        padding-left: 3%;
+        padding-top: 4%;
+    }
+    .footer-middle-col {
+        padding-left: 100px;
+        
+    }
+    li {
+        list-style-type: none;
+        margin-bottom: 8px;
+    }
+    a {
+        color: white;
+    }
+    .twitter  {
+        padding-left: 33%;
+    }
+    .facebook  {
+        padding: 35px;
+    }
+    .instagram  {
+        padding: 0px;
+    }
+    .logo-footer {
+        color: white;
+        margin-left: 3.2%;
+        font-size: 50px;
+        padding-bottom: 20px;
+        font-family: optima;
+        font-weight: bold;
+    }
+    .btn-subscribe-home {
+        color: #16b171;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 45px;
+        border: #16b171;
+        width: 120px;
+        height: 40px;
+        font-family: gdsherpa,Helvetica,Arial,sans-serif;
+        margin-top: 10px;
+        margin-left: 41%;
+        padding-bottom: 3px;
+        
+    }
+    .form-email-subscribe {
+        width: 45%;
+        margin-left: 27%;
+    }
+    .subscribe-now-text {
+        padding-left: 33%;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    footer {
+        background-size: 100% 100%;
+        padding-top: 20vw;
+        background-color: transparent;
+        background-color: #16b171;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-right: 0%;
+        padding-right: 0%;
+        z-index: 1;
+        color: white;
+        font-size: 17px;
+    }
+    .footer-soc {
+        padding-left: 3%;
+        padding-top: 4%;
+    }
+    .footer-middle-col {
+        
+        
+    }
+    li {
+        list-style-type: none;
+        margin-bottom: 8px;
+    }
+    a {
+        color: white;
+    }
+    .twitter  {
+        padding-left: 33%;
+    }
+    .facebook  {
+        padding: 35px;
+    }
+    .instagram  {
+        padding: 0px;
+    }
+    .logo-footer {
+        color: white;
+        margin-left: 3.2%;
+        font-size: 50px;
+        padding-bottom: 20px;
+        font-family: optima;
+        font-weight: bold;
+    }
+    .btn-subscribe-home {
+        color: #16b171;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 45px;
+        border: #16b171;
+        width: 120px;
+        height: 40px;
+        font-family: gdsherpa,Helvetica,Arial,sans-serif;
+        margin-top: 10px;
+        margin-left: 41%;
+        padding-bottom: 3px;
+        
+    }
+    .form-email-subscribe {
+        width: 45%;
+        margin-left: 27%;
+    }
+    .subscribe-now-text {
+        padding-left: 33%;
+    }
+}

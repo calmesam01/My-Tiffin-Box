@@ -1,0 +1,147 @@
+@media only screen and (min-width: 1440px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 550px;
+    height: 450px;
+  }
+  .paper_style {
+    width: 600px;
+    height: 565px;
+    margin-left: 20%;
+    border: 0px;
+    padding: 8%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 45px;
+    text-align: justify;
+    color: #333;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+}
+
