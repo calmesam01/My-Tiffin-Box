@@ -27,11 +27,9 @@ function Home () {
             <div className = "main_1">
                 <Main_1 />
             </div>
-            <hr/>
             <div>
                 <WhyUs />
             </div>
-            <hr/>
         </div>
     );
 };

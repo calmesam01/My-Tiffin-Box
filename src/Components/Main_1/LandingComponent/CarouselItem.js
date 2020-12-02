@@ -8,7 +8,7 @@ function CarouselItem(props)
 {
     return (
         <div className = "row">
-            <div className = "col-md-6 landing_images_col">
+            <div className = "col-md-6">
                 
                 <Paper className = "paper_style">
                     <img src = {props.item.name == "1" ? Landing : Open_Tiffin} className = "landing_images_style"></img><hr/>

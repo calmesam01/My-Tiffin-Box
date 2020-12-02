@@ -106,7 +106,788 @@
     line-height: 2px;
   }
   .bg-grey {
-    background-color: #f6f6f6;
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+    margin-left: 30px;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
+
+
+
+@media only screen and (min-width: 1250px) and (max-width: 1439px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 500px;
+    height: 420px;
+  }
+  .paper_style {
+    width: 600px;
+    height: 545px;
+    border: 0px;
+    margin-left: 10%;
+    padding: 8%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 45px;
+    text-align: justify;
+    color: #333;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+    margin-left: 30px;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
+
+
+
+@media only screen and (min-width: 1165px) and (max-width: 1249px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 450px;
+    height: 390px;
+  }
+  .paper_style {
+    width: 500px;
+    height: 515px;
+    margin-left: 20%;
+    border: 0px;
+    padding: 8%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 45px;
+    text-align: justify;
+    color: #333;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+    margin-left: 30px;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
+
+
+
+@media only screen and (min-width: 1080px) and (max-width: 1164px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 450px;
+    height: 390px;
+  }
+  .paper_style {
+    width: 500px;
+    height: 515px;
+    margin-left: 20%;
+    border: 0px;
+    padding: 8%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 39px;
+    text-align: justify;
+    color: #333;
+    padding-right: 50px;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+    margin-left: 50px;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1080px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 430px;
+    height: 380px;
+  }
+  .paper_style {
+    width: 470px;
+    height: 500px;
+    margin-left: 10%;
+    border: 0px;
+    padding: 8%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 35px;
+    text-align: justify;
+    color: #333;
+    padding-right: 50px;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin-left: 50px;
+  }
+  .btn-see-plans {
+    margin-right: 100px !important;
+    margin-left: 30px;
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 100%;
+    height: 100%;
+  }
+  .paper_style {
+    width: 100%;
+    height: 550px;
+    border: 0px;
+    padding: 0% 15% 12.5% 15%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 45px;
+    text-align: justify;
+    color: #333;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    text-align: justify;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
     padding-top: 70px;
     padding-bottom: 25px;
     animation: fadeIn ease 5s;
@@ -143,5 +924,169 @@
     animation: fadeIn ease 4s;
     -webkit-animation: fadeIn ease 4s;
   }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
 }
 
+
+
+@media only screen and (max-width: 767px) {
+  .landing_image {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .tiffin_landing {
+    width: 700px;
+    height: 640px;
+    z-index: 0;
+    padding-top: 110px;
+    padding-bottom: 0px;
+  }
+  .landing_images_style{
+    width: 470px;
+    height: 480px;
+    position: relative;
+    left: 10%;
+    right: 10%;
+  }
+  .paper_style {
+    width: 100%;
+    align-items: center;
+    height: 600px;
+    border: 0px;
+    padding: 0% 15% 12.5% 15%;
+    background: transparent;
+  }
+  .landing_images_desc {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 24px;
+    background-color: white;
+    border: 2 px #16b171;
+  }
+  .Carousel-indicators-2 {
+    visibility: hidden;
+  }
+  .thumbnail {
+    transition: transform .8s;
+  }
+  .thumbnail:hover {
+    transition: transform .8s;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  .icon-1 {
+    width: 25.5%;
+    height: 25.5%;
+  }
+
+  .icon-2 {
+    width: 30%;
+    height: 30%;
+  }
+
+  .icon-3 {
+    width: 29%;
+    height: 29%;
+  }
+
+  .icon-4 {
+    width: 21%;
+    height: 21%;
+  }
+
+  .icon-5 {
+    width: 18.5%;
+    height: 18.5%;
+  }
+
+  .icon-6 {
+    width: 26.5%;
+    height: 26.5%;
+  }
+
+  .icons_row {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 5%;
+  }
+  .landing_text_col {
+    margin-top: 7%;
+    padding-left: 7%;
+  }
+  .icon_desc {
+    color: #333;
+    font-size: 17px;
+  }
+  h1 {
+    font-family: gd-sage,"Times","Times New Roman",serif;
+    font-size: 45px;
+    text-align: center;
+    color: #333;
+  }
+  .small-text {
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+  }
+  .try_now {
+    color: #333;
+    line-height: 2px;
+  }
+  .bg-grey {
+    padding-top: 70px;
+    padding-bottom: 25px;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+  }
+  .btn_try_now {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #16b171;
+    border-radius: 45px;
+    border: #16b171;
+    width: 115px;
+    height: 41px;
+    font-family: gdsherpa,Helvetica,Arial,sans-serif;
+  }
+  .btn_try_now:hover {
+    color: #16b171;
+    background-color: white;
+    border: 2px solid #16b171;
+    transition: 0.3s;
+  }
+  .btn-order-now {
+    margin: 10px;
+  }
+  .btn-see-plans {
+    
+  }
+  .fade-in-1 {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+  }
+  .fade-in-2 {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+  }
+  .new-landing-text {
+    text-align: center;
+    visibility: hidden;
+  }
+  .old-landing-text {
+    visibility: visible;
+  }
+}
