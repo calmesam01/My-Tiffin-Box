@@ -107,3 +107,89 @@
     }
 
 }
+
+@media only screen and (max-width: 767px) {
+    body {
+        padding-right: 0px !important;
+    }
+    #ButtonGroup {
+        width: 70%;
+        font-size: 50px !important;
+        padding: 40px;
+    }
+    .btn {
+        font-weight: bold;
+        color: white;
+        font-size: 20px;
+        background-color: #16b171;
+    }
+    .btn:hover {
+        color: white;
+    }
+    #Tiffin {
+        padding-top: 100px;
+    }
+
+    .landing-image {
+        opacity: 90%;
+        position: absolute;
+        width: 100%;
+        padding: 0%;
+    }
+    .order_now_heading {
+        text-align: center;
+        color: #16b171;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: optima;
+    }
+    .main_1_hr {
+        width: 70%;
+    }
+    .tiffin-gallary-item {
+        width: 100%;
+        height: 105%;
+    }
+    .sec-2-img {
+        width: 100%;
+        height: 100%;
+    }
+    .parallax-text {
+        color: #333;
+        font-size: 10vw; 
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 50px;
+        font-family: gd-sage,"Times","Times New Roman",serif;
+    }
+    .ul-sec-2 {
+        margin-top: 20%;
+        text-align: center;
+        font-family: optima;
+        font-weight: bold;
+        font-size: 30px;
+        margin-right: 30px;
+    }
+    .li-sec-2 {
+        background-color: #16b171;
+        color: white;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    .our-menu-text {
+        text-align: center;
+        color: #16b171;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: optima;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+    body {
+        scroll-behavior: smooth;
+    }
+    .row {
+        padding-right: 0px !important;
+    }
+
+}

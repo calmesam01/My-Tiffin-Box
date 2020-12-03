@@ -216,14 +216,18 @@
         z-index: 1;
         color: white;
         font-size: 17px;
+        margin-top: 50px;
     }
     .footer-soc {
         padding-left: 3%;
         padding-top: 4%;
     }
-    .footer-middle-col {
-        
-        
+    ol, ul {
+        margin-top: 0;
+        margin-bottom: 10px;
+        position: relative;
+        right: 8px;
+        text-align: center;
     }
     li {
         list-style-type: none;
@@ -233,21 +237,24 @@
         color: white;
     }
     .twitter  {
-        padding-left: 33%;
+        padding-left: 75px;
     }
     .facebook  {
-        padding: 35px;
+        padding: 20px;
     }
     .instagram  {
         padding: 0px;
     }
     .logo-footer {
         color: white;
-        margin-left: 3.2%;
+        text-align: center;
         font-size: 50px;
         padding-bottom: 20px;
         font-family: optima;
         font-weight: bold;
+    }
+    .container {
+        padding-right: 0px !important;
     }
     .btn-subscribe-home {
         color: #16b171;
@@ -260,15 +267,17 @@
         height: 40px;
         font-family: gdsherpa,Helvetica,Arial,sans-serif;
         margin-top: 10px;
-        margin-left: 41%;
+        margin-left: 33%;
         padding-bottom: 3px;
         
     }
-    .form-email-subscribe {
-        width: 45%;
-        margin-left: 27%;
+    .copyright-text {
+        padding-bottom: 40px;
+    }
+    .row {
+        margin-right: 0px !important;
     }
     .subscribe-now-text {
-        padding-left: 33%;
+        text-align: center;
     }
 }

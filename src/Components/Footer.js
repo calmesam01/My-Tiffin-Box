@@ -67,7 +67,7 @@ function Footer () {
                     </div><br/><br/>
                     <div className = "row">
                         <div className="col-12 footer-copyright">
-                            <center><p>Copyright getmytiffin.ca 2020, All rights reserved</p></center>
+                            <center><p className = "copyright-text">Copyright getmytiffin.ca 2020, All rights reserved</p></center>
                         </div>
                     </div><br/><br/>
                 </div>
