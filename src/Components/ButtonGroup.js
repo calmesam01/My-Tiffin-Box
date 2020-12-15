@@ -842,7 +842,7 @@ function ButtonGroup (props) {
     }, [Item_1, Item_2, Item_3, Item_4, Item_1_Empty, Item_2_Empty, Item_3_Empty, Item_4_Empty]);
 
     function ResetTiffin (){
-        window.location = 'http://localhost:3000/OrderNow';
+        window.location = 'https://getmytiffin.ca/OrderNow';
     }
 
     function SubmitVal () {
