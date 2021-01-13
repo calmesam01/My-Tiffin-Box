@@ -1,0 +1,125 @@
+.home-meal-plans.section1 .box-shadow {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.section1 .box-shadow {
+    background-color: #fff;
+    border-radius: .6rem;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, .1);
+    padding: 1.8rem 0rem;
+    position: relative;
+    z-index: 1;
+    margin-top: .8rem;
+}
+.home-meal-plans-table table {
+    width: 100%;
+}
+.home-meal-plans-table table td {
+    color: #084b30;
+}
+
+.home-meal-plans-table table td, .home-meal-plans-table table th {
+    border-right: 2px solid #E9E9E9;
+    text-align: center;
+    padding: .9rem 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+user agent stylesheet
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+.home-meal-plans-table table td:nth-child(1), .home-meal-plans-table table th:nth-child(1) {
+    width: 40.5%;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 1.1rem;
+    color: #282828;
+}
+.home-meal-plans-table table th {
+    font-size: 1.3rem;
+    color: #084b30;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #17B272;
+}
+.home-meal-plans-table table td, .home-meal-plans-table table th {
+    border-right: 2px solid #E9E9E9;
+    text-align: center;
+    padding: .9rem 0;
+}
+.home-meal-plans-table table th {
+    font-size: 1.3rem;
+    color: #084b30;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #17B272;
+}
+.home-meal-plans-table table td, .home-meal-plans-table table th {
+    border-right: 2px solid #E9E9E9;
+    text-align: center;
+    padding: .9rem 0;
+}
+.home-meal-plans-table table td {
+    color: #084b30;
+}
+.home-meal-plans-table table td, .home-meal-plans-table table th {
+    border-right: 2px solid #E9E9E9;
+    text-align: center;
+    padding: .9rem 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.dot{
+    display: inline-block;
+    background-color: #14B171;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    margin: 13px 0px 0px 0px;
+}
+.home-meal-plans-table table td:nth-child(1), .home-meal-plans-table table th:nth-child(1) {
+    width: 40.5%;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 1.1rem;
+    color: #282828;
+}
+th {
+    font-size: 20px;
+}
+.line {
+    background-color: #5E5E5E;
+    border-radius: 10;
+    font-size: 30px;
+    height: 2px !important;
+    background-color: white;
+}
+h4 {
+    font-family: avenir-normal, sans-serif;
+    font-weight: 500;
+    color: black;
+    padding: 2px 0px 2px 14px;
+}
+.center {
+    text-align: center;
+}
+.center-text {
+    padding-top: 15px !important;
+    text-align: center;
+}

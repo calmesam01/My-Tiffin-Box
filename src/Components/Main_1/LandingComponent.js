@@ -11,11 +11,11 @@ function LandingComponent(props) {
           name: "1",
           description: "Get your food delieverd faster",
       }
-      // ,
-      // {
-      //     name: "2",
-      //     description: "The same old steel tiffins at your door step"
-      // }
+      ,
+      {
+          name: "2",
+          description: "The same old steel tiffins at your door step"
+      }
   ]
 
 

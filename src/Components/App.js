@@ -8,7 +8,7 @@ import About from '../Pages/About';
 import Error from '../Pages/Error';
 import Contact from '../Pages/Contact';
 import Payments from '../Pages/Payments';
-import Plans from '../Pages/Plans';
+import PlansPage from '../Pages/PlansPage';
 import Subscribe from '../Pages/Subscribe'
 import OrderNow from '../Pages/OrderNow';
 import Ordered from '../Pages/Ordered';
@@ -29,7 +29,7 @@ function App() {
           </Route>
           <Route exact path="/OrderNow" component = {OrderNow}>
           </Route>
-          <Route exact path="/Plans" component = {Plans}>
+          <Route exact path="/Plans" component = {PlansPage}>
           </Route>
           <Route exact path="/Payment" component = {Payments}>
           </Route>
