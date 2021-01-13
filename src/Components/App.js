@@ -4,9 +4,9 @@ import Footer from './Footer'
 import Navbar from '../Components/Main_1/Navbar';
 import Home from '../Pages/Home';
 import Register from '../Pages/Register';
-import About from '../Pages/About';
+import AboutPage from '../Pages/AboutPage';
 import Error from '../Pages/Error';
-import Contact from '../Pages/Contact';
+import ContactPage from '../Pages/ContactPage';
 import Payments from '../Pages/Payments';
 import PlansPage from '../Pages/PlansPage';
 import Subscribe from '../Pages/Subscribe'
@@ -21,11 +21,11 @@ function App() {
         <Switch>
           <Route exact path="/" component = {Home}>
           </Route>
-          <Route exact path="/About" component = {About}>
+          <Route exact path="/About" component = {AboutPage}>
           </Route>
           <Route exact path="/Register" component = {Register}>
           </Route>
-          <Route exact path="/Contact" component = {Contact}>
+          <Route exact path="/Contact" component = {ContactPage}>
           </Route>
           <Route exact path="/OrderNow" component = {OrderNow}>
           </Route>

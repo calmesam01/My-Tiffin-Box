@@ -1,0 +1,41 @@
+.about-text {
+    font-size:20px;
+    margin-top: 20px;
+    text-align: justify;
+}
+body {
+    font-family: optima;
+}
+.img-1 {
+    height: 60px;
+    width: 50px;
+    
+}
+.img-2 {
+    height: 60px;
+    width: 35px;
+}
+.img-3 {
+    height: 60px;
+    width: 45px;
+}
+.img-4 {
+    height: 60px;
+    width: 50px;
+}
+.heading {
+    margin-bottom: 30px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.aboutus_section {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+}
+.why_section {
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+}

@@ -1,0 +1,15 @@
+body {
+    font-family: avenir-normal, sans-serif;
+}
+p {
+    font-size: 17px;
+}
+.contact_section {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
